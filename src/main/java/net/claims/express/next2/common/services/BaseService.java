@@ -6,12 +6,12 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import net.claims.express.next2.common.repositories.BaseRepository;
-import org.springframework.data.jpa.repository.JpaRepository;
 
-public abstract class BaseService<T> {
+public abstract class BaseService<T> {	
 
 	@Autowired
 	BaseRepository<T, String> baseRepository;
+
 	public Optional<T> findById(String id) {
 		return baseRepository.findById(id);
 	}
